@@ -8,9 +8,9 @@
 // ================================================================
 const CARDAPIO = {
   entradas: [
-    { id: 'e1', nome: "Dadinho de Tapioca com Geleia de Pimenta", descricao: "Crocantes cubinhos de tapioca fritos acompanhados de geleia artesanal de pimenta.", preco: 28.90, imagem: "./Dadinho.png", etiqueta: "⭐ Popular", categoria: 'entradas' },
-    { id: 'e2', nome: "Caldo de Sururu", descricao: "Caldo rico e aromático feito com sururu fresco, azeite de dendê e ervas da caatinga.", preco: 22.90, imagem: "./Sururu.png", etiqueta: null, categoria: 'entradas' },
-    { id: 'e3', nome: "Macaxeira Frita com Aioli de Coriandro", descricao: "Palitos dourados de macaxeira fresca com molho cremoso de coentro e alho.", preco: 19.90, imagem: "./Macaxeira.png", etiqueta: null, categoria: 'entradas' },
+    { id: 'e1', nome: "Dadinho de Tapioca com Geleia de Pimenta", descricao: "Crocantes cubinhos de tapioca fritos acompanhados de geleia artesanal de pimenta.", preco: 28.90, imagem: "Dadinho.png", etiqueta: "⭐ Popular", categoria: 'entradas' },
+    { id: 'e2', nome: "Caldo de Sururu", descricao: "Caldo rico e aromático feito com sururu fresco, azeite de dendê e ervas da caatinga.", preco: 22.90, imagem: "Sururu.png", etiqueta: null, categoria: 'entradas' },
+    { id: 'e3', nome: "Macaxeira Frita com Aioli de Coriandro", descricao: "Palitos dourados de macaxeira fresca com molho cremoso de coentro e alho.", preco: 19.90, imagem: "Macaxeira.png", etiqueta: null, categoria: 'entradas' },
     { id: 'e4', nome: "Bruschetta Nordestina", descricao: "Fatias de broa de milho torradas com carne de sol desfiada e queijo coalho grelhado.", preco: 25.90, imagem: "Gemini_Generated_Image_p9m5nzp9m5nzp9m5-Photoroom.png", etiqueta: "🆕 Novo", categoria: 'entradas' }
   ],
   pratos: [
