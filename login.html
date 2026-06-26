@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar — Raízes do Nordeste</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --terra: #C4522A;
+      --amber: #E8A020;
+      --cream: #FDF4E3;
+      --dark: #1A0F08;
+      --muted: #8B6B52;
+      --bg-page: #F5EDD8;
+      --bg-warm: #2C160A;
+      --fonte-titulo: 'Playfair Display', Georgia, serif;
+      --fonte-corpo: 'Barlow', system-ui, sans-serif;
+      --fonte-cond: 'Barlow Condensed', sans-serif;
+      --borda-arredondada: 14px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--fonte-corpo);
+      background: linear-gradient(135deg, #2C160A 0%, #5C2210 60%, #2C160A 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    /* topo com logo */
+    .topo-logo {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .topo-logo a {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: var(--fonte-titulo);
+      font-size: 1.3rem;
+      color: var(--cream);
+    }
+
+    .topo-logo strong {
+      color: var(--amber);
+    }
+
+    .area-voltar {
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .btn-voltar-inicio {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .4rem;
+      margin-top: .9rem;
+      padding: .55rem 1rem;
+      border-radius: 50px;
+      border: 1.5px solid rgba(253, 244, 227, .35);
+      color: var(--cream);
+      font-family: var(--fonte-cond);
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background .2s, border-color .2s, transform .15s;
+    }
+
+    .btn-voltar-inicio:hover {
+      background: rgba(253, 244, 227, .08);
+      border-color: var(--amber);
+      transform: translateY(-1px);
+    }
+
+    /* caixa principal do formulário */
+    .caixa-login {
+      background: #fff;
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .4);
+    }
+
+    /* título da tela */
+    .titulo-tela {
+      font-family: var(--fonte-titulo);
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: .3rem;
+    }
+
+    .subtitulo-tela {
+      font-size: .9rem;
+      color: var(--muted);
+      margin-bottom: 1.8rem;
+    }
+
+    /* abas de login / cadastro */
+    .abas-acesso {
+      display: flex;
+      gap: .5rem;
+      margin-bottom: 1.5rem;
+      background: #f5ede0;
+      border-radius: 50px;
+      padding: .3rem;
+    }
+
+    .aba-btn {
+      flex: 1;
+      background: transparent;
+      border: none;
+      border-radius: 50px;
+      font-family: var(--fonte-cond);
+      font-weight: 700;
+      font-size: .9rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: .55rem;
+      cursor: pointer;
+      transition: background .2s, color .2s;
+    }
+
+    .aba-btn.ativa {
+      background: var(--terra);
+      color: #fff;
+    }
+
+    /* campo de formulário */
+    .grupo-campo {
+      margin-bottom: 1rem;
+    }
+
+    .grupo-campo label {
+      display: block;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: .35rem;
+    }
+
+    .campo-entrada {
+      width: 100%;
+      border: 1.5px solid #e0d4c0;
+      border-radius: 10px;
+      padding: .75rem 1rem;
+      font-family: var(--fonte-corpo);
+      font-size: .95rem;
+      color: var(--dark);
+      background: #fff;
+      transition: border-color .2s;
+      outline: none;
+    }
+
+    .campo-entrada:focus {
+      border-color: var(--terra);
+    }
+
+    .campo-entrada.erro {
+      border-color: #e53e3e;
+    }
+
+    .msg-erro {
+      font-size: .78rem;
+      color: #e53e3e;
+      margin-top: .3rem;
+    }
+
+    /* link de esqueceu a senha */
+    .link-esqueceu {
+      display: inline-block;
+      font-size: .82rem;
+      color: var(--terra);
+      text-decoration: none;
+      cursor: pointer;
+      margin-top: .2rem;
+    }
+
+    .link-esqueceu:hover {
+      text-decoration: underline;
+    }
+
+    /* botão principal */
+    .btn-principal {
+      display: block;
+      width: 100%;
+      background: var(--terra);
+      color: #fff;
+      font-family: var(--fonte-cond);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: .9rem 1.5rem;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: background .2s, transform .15s;
+      margin-top: 1.3rem;
+    }
+
+    .btn-principal:hover {
+      background: #d4612f;
+      transform: translateY(-2px);
+    }
+
+    .btn-principal:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* separador visual */
+    .separador {
+      text-align: center;
+      font-size: .8rem;
+      color: #bbb;
+      margin: 1.2rem 0;
+      position: relative;
+    }
+
+    .separador::before,
+    .separador::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 40%;
+      height: 1px;
+      background: #e0d4c0;
+    }
+
+    .separador::before {
+      left: 0;
+    }
+
+    .separador::after {
+      right: 0;
+    }
+
+    /* área de sucesso / aviso */
+    .aviso-sucesso {
+      background: #f0fff4;
+      border: 1px solid #68d391;
+      border-radius: 10px;
+      padding: 1rem;
+      font-size: .88rem;
+      color: #276749;
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+
+    .aviso-info {
+      background: #fffbeb;
+      border: 1px solid var(--amber);
+      border-radius: 10px;
+      padding: 1rem;
+      font-size: .88rem;
+      color: #7b5e0a;
+      margin-top: 1rem;
+    }
+
+    /* tela oculta / visível */
+    .tela {
+      display: none;
+    }
+
+    .tela.ativa {
+      display: block;
+    }
+
+    /* rodapé da caixa */
+    .rodape-caixa {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: .85rem;
+      color: var(--muted);
+    }
+
+    .rodape-caixa a {
+      color: var(--terra);
+      text-decoration: none;
+    }
+
+    .rodape-caixa a:hover {
+      text-decoration: underline;
+    }
+
+    /* mensagem de carregamento */
+    .spinner {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255, 255, 255, .4);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: girar .6s linear infinite;
+      vertical-align: middle;
+      margin-right: .4rem;
+    }
+
+    @keyframes girar {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topo-logo">
+    <a href="index.html">🪨 Raízes do <strong>Nordeste</strong></a>
+  </div>
+
+  <div class="caixa-login">
+
+    <!-- abas de login e cadastro -->
+    <div class="abas-acesso" id="abasAcesso">
+      <button class="aba-btn ativa" id="abaLoginBtn" onclick="trocarAba('login')">Entrar</button>
+      <button class="aba-btn" id="abaCadastroBtn" onclick="trocarAba('cadastro')">Criar conta</button>
+    </div>
+
+    <!-- ===== TELA DE LOGIN ===== -->
+    <div id="telaLogin" class="tela ativa">
+      <h1 class="titulo-tela">Bem-vindo de volta!</h1>
+      <p class="subtitulo-tela">Entre para fazer seu pedido.</p>
+
+      <div class="grupo-campo">
+        <label for="loginEmail">E-mail</label>
+        <input type="email" id="loginEmail" class="campo-entrada" placeholder="seu@email.com" autocomplete="email">
+        <span class="msg-erro" id="erroLoginEmail"></span>
+      </div>
+      <div class="grupo-campo">
+        <label for="loginSenha">Senha</label>
+        <input type="password" id="loginSenha" class="campo-entrada" placeholder="••••••••"
+          autocomplete="current-password">
+        <span class="msg-erro" id="erroLoginSenha"></span>
+      </div>
+      <span class="link-esqueceu" onclick="trocarAba('esqueci')">Esqueceu a senha?</span>
+
+      <button class="btn-principal" id="btnEntrar" onclick="realizarLogin()">Entrar</button>
+      <div id="avisoLogin"></div>
+    </div>
+
+    <!-- ===== TELA DE CADASTRO ===== -->
+    <div id="telaCadastro" class="tela">
+      <h1 class="titulo-tela">Crie sua conta</h1>
+      <p class="subtitulo-tela">É rápido e você acumula pontos em cada pedido!</p>
+
+      <div class="grupo-campo">
+        <label for="cadNome">Nome completo</label>
+        <input type="text" id="cadNome" class="campo-entrada" placeholder="Seu nome" autocomplete="name">
+        <span class="msg-erro" id="erroCadNome"></span>
+      </div>
+      <div class="grupo-campo">
+        <label for="cadEmail">E-mail</label>
+        <input type="email" id="cadEmail" class="campo-entrada" placeholder="seu@email.com" autocomplete="email">
+        <span class="msg-erro" id="erroCadEmail"></span>
+      </div>
+      <div class="grupo-campo">
+        <label for="cadTelefone">Telefone</label>
+        <input type="tel" id="cadTelefone" class="campo-entrada" placeholder="(00) 9 0000-0000" autocomplete="tel">
+      </div>
+      <div class="grupo-campo">
+        <label for="cadSenha">Senha</label>
+        <input type="password" id="cadSenha" class="campo-entrada" placeholder="Mínimo 6 caracteres"
+          autocomplete="new-password">
+        <span class="msg-erro" id="erroCadSenha"></span>
+      </div>
+      <div class="grupo-campo">
+        <label for="cadSenha2">Confirmar senha</label>
+        <input type="password" id="cadSenha2" class="campo-entrada" placeholder="Repita a senha"
+          autocomplete="new-password">
+        <span class="msg-erro" id="erroCadSenha2"></span>
+      </div>
+
+      <button class="btn-principal" id="btnCadastrar" onclick="realizarCadastro()">Criar minha conta</button>
+      <div id="avisoCadastro"></div>
+    </div>
+
+    <!-- ===== TELA DE ESQUECI A SENHA ===== -->
+    <div id="telaEsqueci" class="tela">
+      <h1 class="titulo-tela">Redefinir senha</h1>
+      <p class="subtitulo-tela">Informe seu e-mail e enviaremos um link (válido por 10 min).</p>
+
+      <div class="grupo-campo">
+        <label for="esqueciEmail">E-mail cadastrado</label>
+        <input type="email" id="esqueciEmail" class="campo-entrada" placeholder="seu@email.com">
+        <span class="msg-erro" id="erroEsqueciEmail"></span>
+      </div>
+
+      <button class="btn-principal" id="btnEsqueci" onclick="solicitarRedefinicao()">Enviar link de redefinição</button>
+      <div id="avisoEsqueci"></div>
+
+      <p class="rodape-caixa" style="margin-top:1rem">
+        <a onclick="trocarAba('login')" style="cursor:pointer">← Voltar ao login</a>
+      </p>
+    </div>
+
+    <!-- ===== TELA DE NOVA SENHA (link temporário) ===== -->
+    <div id="telaNovaSenha" class="tela">
+      <h1 class="titulo-tela">Nova senha</h1>
+      <p class="subtitulo-tela">Este link expira em <strong>10 minutos</strong>. Escolha sua nova senha.</p>
+
+      <div class="grupo-campo">
+        <label for="novaSenha">Nova senha</label>
+        <input type="password" id="novaSenha" class="campo-entrada" placeholder="Mínimo 6 caracteres">
+      </div>
+      <div class="grupo-campo">
+        <label for="novaSenha2">Confirmar nova senha</label>
+        <input type="password" id="novaSenha2" class="campo-entrada" placeholder="Repita a senha">
+        <span class="msg-erro" id="erroNovaSenha"></span>
+      </div>
+
+      <button class="btn-principal" onclick="salvarNovaSenha()">Salvar nova senha</button>
+      <div id="avisoNovaSenha"></div>
+    </div>
+
+  </div><!-- /caixa-login -->
+
+  <div class="area-voltar">
+    <a href="index.html" class="btn-voltar-inicio">← Voltar para a tela inicial</a>
+  </div>
+
+  <script>
+    // ================================================================
+    // SISTEMA DE AUTENTICAÇÃO — simulado (pronto para backend real)
+    // ================================================================
+
+    // chave para guardar usuários no armazenamento local (substituir por API)
+    const CHAVE_USUARIOS = 'raizes_usuarios_db';
+    const CHAVE_SESSAO = 'raizes_usuario';
+    const CHAVE_TOKEN = 'raizes_token_reset';
+
+    // busca lista de usuários cadastrados
+    function buscarUsuarios() {
+      return JSON.parse(localStorage.getItem(CHAVE_USUARIOS) || '[]');
+    }
+
+    // salva lista atualizada
+    function salvarUsuarios(lista) {
+      localStorage.setItem(CHAVE_USUARIOS, JSON.stringify(lista));
+    }
+
+    // inicia sessão do usuário
+    function iniciarSessao(usuario) {
+      // remove a senha antes de salvar na sessão por segurança
+      const semSenha = { ...usuario };
+      delete semSenha.senha;
+      localStorage.setItem(CHAVE_SESSAO, JSON.stringify(semSenha));
+    }
+
+    // redireciona de volta pra página de origem ou home
+    function redirecionarAposLogin() {
+      const destino = sessionStorage.getItem('raizes_redirecionarPara') || 'index.html';
+      sessionStorage.removeItem('raizes_redirecionarPara');
+      window.location.href = destino;
+    }
+
+    // troca entre as telas (login, cadastro, esqueci, nova senha)
+    function trocarAba(qual) {
+      document.querySelectorAll('.tela').forEach(t => t.classList.remove('ativa'));
+      document.querySelectorAll('.aba-btn').forEach(b => b.classList.remove('ativa'));
+
+      if (qual === 'login') {
+        document.getElementById('telaLogin').classList.add('ativa');
+        document.getElementById('abaLoginBtn').classList.add('ativa');
+        document.getElementById('abasAcesso').style.display = 'flex';
+      } else if (qual === 'cadastro') {
+        document.getElementById('telaCadastro').classList.add('ativa');
+        document.getElementById('abaCadastroBtn').classList.add('ativa');
+        document.getElementById('abasAcesso').style.display = 'flex';
+      } else if (qual === 'esqueci') {
+        document.getElementById('telaEsqueci').classList.add('ativa');
+        document.getElementById('abasAcesso').style.display = 'none';
+      } else if (qual === 'nova-senha') {
+        document.getElementById('telaNovaSenha').classList.add('ativa');
+        document.getElementById('abasAcesso').style.display = 'none';
+      }
+    }
+
+    // limpa erros de um campo
+    function limparErro(id) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = '';
+    }
+
+    // exibe erro em um campo
+    function mostrarErro(id, msg) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = msg;
+    }
+
+    // ---- REALIZAR LOGIN ----
+    function realizarLogin() {
+      const email = document.getElementById('loginEmail').value.trim();
+      const senha = document.getElementById('loginSenha').value;
+      const aviso = document.getElementById('avisoLogin');
+      aviso.innerHTML = '';
+      limparErro('erroLoginEmail');
+      limparErro('erroLoginSenha');
+
+      let valido = true;
+      if (!email) { mostrarErro('erroLoginEmail', 'Informe o e-mail.'); valido = false; }
+      if (!senha) { mostrarErro('erroLoginSenha', 'Informe a senha.'); valido = false; }
+      if (!valido) return;
+
+      // simula chamada ao servidor — substituir por fetch('/api/login', ...)
+      const usuarios = buscarUsuarios();
+      const usuario = usuarios.find(u => u.email === email && u.senha === senha);
+
+      if (!usuario) {
+        aviso.innerHTML = '<div class="aviso-info">E-mail ou senha incorretos. Verifique os dados e tente novamente.</div>';
+        return;
+      }
+
+      iniciarSessao(usuario);
+      redirecionarAposLogin();
+    }
+
+    // ---- REALIZAR CADASTRO ----
+    function realizarCadastro() {
+      const nome = document.getElementById('cadNome').value.trim();
+      const email = document.getElementById('cadEmail').value.trim();
+      const tel = document.getElementById('cadTelefone').value.trim();
+      const senha = document.getElementById('cadSenha').value;
+      const senha2 = document.getElementById('cadSenha2').value;
+      const aviso = document.getElementById('avisoCadastro');
+      aviso.innerHTML = '';
+      ['erroCadNome', 'erroCadEmail', 'erroCadSenha', 'erroCadSenha2'].forEach(limparErro);
+
+      let valido = true;
+      if (!nome) { mostrarErro('erroCadNome', 'Informe o nome.'); valido = false; }
+      if (!email) { mostrarErro('erroCadEmail', 'Informe o e-mail.'); valido = false; }
+      if (senha.length < 6) { mostrarErro('erroCadSenha', 'A senha precisa ter pelo menos 6 caracteres.'); valido = false; }
+      if (senha !== senha2) { mostrarErro('erroCadSenha2', 'As senhas não coincidem.'); valido = false; }
+      if (!valido) return;
+
+      // simula verificação de e-mail duplicado — substituir por fetch('/api/cadastro', ...)
+      const usuarios = buscarUsuarios();
+      if (usuarios.find(u => u.email === email)) {
+        mostrarErro('erroCadEmail', 'Este e-mail já está cadastrado.');
+        return;
+      }
+
+      // cria novo usuário com pontos zerados e missões
+      const novoUsuario = {
+        id: 'u_' + Date.now(),
+        nome, email, senha, telefone: tel,
+        foto: '',
+        capa: '',
+        pontos: 0,
+        pratosPedidos: 0,
+        pedidosRealizados: [],
+        missoes: {
+          comprar4Pratos: { concluida: false, usada: false }
+        },
+        cupons: [],
+        enderecos: []
+      };
+
+      usuarios.push(novoUsuario);
+      salvarUsuarios(usuarios);
+      iniciarSessao(novoUsuario);
+      redirecionarAposLogin();
+    }
+
+    // ---- SOLICITAR REDEFINIÇÃO DE SENHA ----
+    function solicitarRedefinicao() {
+      const email = document.getElementById('esqueciEmail').value.trim();
+      const aviso = document.getElementById('avisoEsqueci');
+      aviso.innerHTML = '';
+      limparErro('erroEsqueciEmail');
+
+      if (!email) { mostrarErro('erroEsqueciEmail', 'Informe o e-mail.'); return; }
+
+      // simula envio de e-mail — substituir por fetch('/api/redefinir-senha', { email })
+      const usuarios = buscarUsuarios();
+      const usuario = usuarios.find(u => u.email === email);
+
+      // por segurança, sempre mostramos a mesma mensagem independente de o e-mail existir
+      // guarda um token temporário com expiração de 10 minutos
+      if (usuario) {
+        const token = {
+          email,
+          expira: Date.now() + 10 * 60 * 1000, // 10 minutos
+          codigo: Math.random().toString(36).slice(2)
+        };
+        localStorage.setItem(CHAVE_TOKEN, JSON.stringify(token));
+      }
+
+      aviso.innerHTML = `<div class="aviso-sucesso">
+        ✅ Se este e-mail estiver cadastrado, você receberá um link de redefinição em breve.<br>
+        <small>O link expira em <strong>10 minutos</strong>.</small>
+        <br><br>
+        <em style="color:var(--muted);font-size:.82rem">(Ambiente de demonstração: <a onclick="simularLinkRedefinicao()" style="cursor:pointer;color:var(--terra)">clique aqui para simular o link</a>)</em>
+      </div>`;
+    }
+
+    // simula o clique no link do e-mail (apenas em ambiente de demonstração)
+    function simularLinkRedefinicao() {
+      const token = JSON.parse(localStorage.getItem(CHAVE_TOKEN) || 'null');
+      if (!token || Date.now() > token.expira) {
+        alert('Este link expirou. Solicite um novo.');
+        return;
+      }
+      trocarAba('nova-senha');
+    }
+
+    // ---- SALVAR NOVA SENHA ----
+    function salvarNovaSenha() {
+      const nova = document.getElementById('novaSenha').value;
+      const nova2 = document.getElementById('novaSenha2').value;
+      const aviso = document.getElementById('avisoNovaSenha');
+      aviso.innerHTML = '';
+      limparErro('erroNovaSenha');
+
+      if (nova.length < 6) { mostrarErro('erroNovaSenha', 'A senha precisa ter pelo menos 6 caracteres.'); return; }
+      if (nova !== nova2) { mostrarErro('erroNovaSenha', 'As senhas não coincidem.'); return; }
+
+      const token = JSON.parse(localStorage.getItem(CHAVE_TOKEN) || 'null');
+      if (!token || Date.now() > token.expira) {
+        aviso.innerHTML = '<div class="aviso-info">⏰ Este link expirou. Solicite um novo e-mail de redefinição.</div>';
+        return;
+      }
+
+      // atualiza a senha — substituir por fetch('/api/nova-senha', { token, novaSenha })
+      const usuarios = buscarUsuarios();
+      const idx = usuarios.findIndex(u => u.email === token.email);
+      if (idx >= 0) {
+        usuarios[idx].senha = nova;
+        salvarUsuarios(usuarios);
+        localStorage.removeItem(CHAVE_TOKEN);
+        aviso.innerHTML = '<div class="aviso-sucesso">✅ Senha alterada com sucesso! Redirecionando...</div>';
+        setTimeout(() => trocarAba('login'), 2000);
+      }
+    }
+
+    // ---- VERIFICA SE JÁ ESTÁ LOGADO ----
+    (function verificarSessao() {
+      const usuario = JSON.parse(localStorage.getItem(CHAVE_SESSAO) || 'null');
+      if (usuario) {
+        // já logado, vai direto pro perfil ou home
+        window.location.href = 'perfil.html';
+      }
+      // verifica se há link de token na URL (simulado pelo hash)
+      if (window.location.hash === '#redefinir') {
+        trocarAba('nova-senha');
+      }
+    })();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raízes do Nordeste</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Menu de navegação -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#">
+        <span class="logo-icon">🪨</span>
+        <span class="logo-text">Raízes do <strong>Nordeste</strong></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#hero" data-scroll="hero">Início</a></li>
+        <li><a href="#restaurante" data-scroll="restaurante">Restaurante</a></li>
+        <li><a href="#cardapio" data-scroll="cardapio">Cardápio</a></li>
+        <li><a href="#chef" data-scroll="chef">Chef</a></li>
+        <li><a href="delivery.html" class="nav-delivery">🛵 Delivery</a></li>
+        <!-- botão de login / perfil (alternado via JS) -->
+        <li id="navLoginItem"><a href="login.html" class="nav-login-btn">Entrar</a></li>
+        <li id="navUserItem" style="display:none">
+          <a href="perfil.html" class="nav-user-btn">
+            <img src="" alt="Perfil" class="nav-user-avatar" id="navUserAvatar">
+            <span id="navUserNome">Você</span>
+          </a>
+        </li>
+      </ul>
+      <button class="nav-burger" id="navBurger" aria-label="Menu">&#9776;</button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="#hero" data-scroll="hero">Início</a>
+      <a href="#restaurante" data-scroll="restaurante">Restaurante</a>
+      <a href="#cardapio" data-scroll="cardapio">Cardápio</a>
+      <a href="#chef" data-scroll="chef">Chef</a>
+      <a href="delivery.html">🛵 Delivery</a>
+      <a href="login.html" id="mobileLoginLink">Entrar</a>
+      <a href="perfil.html" id="mobilePerfilLink" style="display:none">👤 Meu Perfil</a>
+    </div>
+  </nav>
+
+  <!-- Parte principal da capa -->
+  <section id="hero" class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-eyebrow">Restaurante Nordestino</p>
+        <h1 class="hero-headline">
+          <em>Cultura</em> que alimenta,<br>
+          sabor que <em>orgulha.</em>
+        </h1>
+        <p class="hero-sub">Receitas transmitidas de geração em geração, preparadas com amor e os ingredientes mais
+          autênticos do sertão.</p>
+        <div class="hero-actions">
+          <a href="#cardapio" class="btn-primary" data-scroll="cardapio">Ver Cardápio</a>
+          <a href="delivery.html" class="btn-outline">Fazer Pedido 🛵</a>
+        </div>
+        <div class="hero-social">
+          <a href="#" aria-label="Facebook"><img src="IMG/facebook.png" alt="Facebook" width="24" height="24"></a>
+          <a href="#" aria-label="Instagram"><img src="IMG/Instagram.png" alt="Instagram" width="24" height="24"></a>
+          <a href="#" aria-label="TikTok"><img src="IMG/tiktok.png" alt="TikTok" width="24" height="24"></a>
+        </div>
+      </div>
+      <div class="hero-dish-wrap">
+        <div class="hero-glow"></div>
+        <img class="hero-dish spinning" src="IMG/Pratodochef.png" alt="Baião de Dois - prato principal">
+        <div class="hero-badge">⭐ Prato do Chef</div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>↓</span>
+    </div>
+  </section>
+
+  <!-- Seção contando a história -->
+  <section id="restaurante" class="about-band light-section">
+    <div class="nordeste-deco nordeste-deco-left" aria-hidden="true">
+      <svg viewBox="0 0 120 600" xmlns="http://www.w3.org/2000/svg">
+        <rect x="52" y="540" width="16" height="60" rx="8" fill="currentColor" opacity=".18" />
+        <rect x="52" y="440" width="16" height="130" rx="8" fill="currentColor" opacity=".22" />
+        <rect x="20" y="470" width="34" height="12" rx="6" fill="currentColor" opacity=".18" />
+        <rect x="66" y="490" width="34" height="12" rx="6" fill="currentColor" opacity=".18" />
+        <rect x="14" y="458" width="12" height="30" rx="6" fill="currentColor" opacity=".15" />
+        <rect x="94" y="478" width="12" height="30" rx="6" fill="currentColor" opacity=".15" />
+        <circle cx="60" cy="80" r="28" fill="currentColor" opacity=".12" />
+        <line x1="60" y1="38" x2="60" y2="22" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+          opacity=".14" />
+        <line x1="60" y1="122" x2="60" y2="138" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+          opacity=".14" />
+        <line x1="18" y1="80" x2="2" y2="80" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+          opacity=".14" />
+        <line x1="102" y1="80" x2="118" y2="80" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+          opacity=".14" />
+        <path d="M20 260 Q60 220 100 260 L108 272 Q60 252 12 272 Z" fill="currentColor" opacity=".13" />
+        <path d="M15 272 Q60 255 105 272 L110 282 Q60 268 10 282 Z" fill="currentColor" opacity=".10" />
+        <circle cx="30" cy="340" r="3" fill="currentColor" opacity=".18" />
+        <circle cx="60" cy="330" r="3" fill="currentColor" opacity=".18" />
+        <circle cx="90" cy="340" r="3" fill="currentColor" opacity=".18" />
+        <circle cx="45" cy="360" r="3" fill="currentColor" opacity=".14" />
+        <circle cx="75" cy="360" r="3" fill="currentColor" opacity=".14" />
+        <circle cx="60" cy="380" r="3" fill="currentColor" opacity=".14" />
+        <path d="M60 165 L72 185 L60 205 L48 185 Z" fill="currentColor" opacity=".13" />
+      </svg>
+    </div>
+    <div class="nordeste-deco nordeste-deco-right" aria-hidden="true">
+      <svg viewBox="0 0 120 600" xmlns="http://www.w3.org/2000/svg">
+        <rect x="52" y="540" width="16" height="60" rx="8" fill="currentColor" opacity=".18" />
+        <rect x="52" y="440" width="16" height="130" rx="8" fill="currentColor" opacity=".22" />
+        <rect x="20" y="470" width="34" height="12" rx="6" fill="currentColor" opacity=".18" />
+        <rect x="66" y="490" width="34" height="12" rx="6" fill="currentColor" opacity=".18" />
+        <circle cx="60" cy="80" r="28" fill="currentColor" opacity=".12" />
+        <path d="M20 260 Q60 220 100 260 L108 272 Q60 252 12 272 Z" fill="currentColor" opacity=".13" />
+        <circle cx="30" cy="340" r="3" fill="currentColor" opacity=".18" />
+        <circle cx="60" cy="330" r="3" fill="currentColor" opacity=".18" />
+        <circle cx="90" cy="340" r="3" fill="currentColor" opacity=".18" />
+      </svg>
+    </div>
+
+    <div class="band-inner">
+      <div class="band-img">
+        <img src="IMG/Externo1.png" alt="Fachada do Raízes do Nordeste">
+      </div>
+      <div class="band-copy">
+        <p class="section-eyebrow">Nossa História</p>
+        <h2>Onde o sertão<br>encontra a mesa</h2>
+        <p>Fundado com o propósito de preservar e celebrar a culinária nordestina, o Raízes do Nordeste é muito mais
+          que um restaurante — é um convite para uma viagem sensorial pelo coração do Brasil.</p>
+        <p>Cada detalhe do nosso espaço foi pensado para trazer a atmosfera autêntica do sertão: as paredes de taipa,
+          os utensílios de barro e as receitas passadas de mãe para filha há gerações.</p>
+        <ul class="band-stats">
+          <li><strong>15+</strong> Anos de história</li>
+          <li><strong>200+</strong> Receitas no acervo</li>
+          <li><strong>50k+</strong> Clientes satisfeitos</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="band-inner band-inner-reverse">
+      <div class="band-img">
+        <img src="IMG/Interno1.png" alt="Interior do Raízes do Nordeste">
+      </div>
+      <div class="band-copy">
+        <p class="section-eyebrow">Ambiente Interno</p>
+        <h2>Por dentro do<br>Raízes do Nordeste</h2>
+        <p>O salão foi pensado para receber cada cliente com aconchego, textura e memória nordestina. Madeira, barro e
+          iluminação quente criam a atmosfera ideal para viver a experiência da casa.</p>
+        <p>Da entrada à mesa, cada detalhe reforça a sensação de tradição viva, com um espaço preparado para celebrar a
+          comida e a cultura do Nordeste.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção do cardápio interativo -->
+  <section id="cardapio" class="menu-section dark-section">
+    <div class="menu-section-header">
+      <p class="section-eyebrow light">Nosso Cardápio</p>
+      <h2 class="section-title light">Sabores do Nordeste</h2>
+    </div>
+
+    <div class="category-nav">
+      <button class="cat-arrow" id="catPrev" aria-label="Categoria anterior">‹</button>
+      <div class="category-track" id="categoryTrack">
+        <div class="category-slide active">
+          <h3>Entradas</h3>
+          <p>Petiscos e caldos para começar bem</p>
+        </div>
+        <div class="category-slide">
+          <h3>Pratos Principais</h3>
+          <p>O coração da culinária nordestina</p>
+        </div>
+        <div class="category-slide">
+          <h3>Sobremesas</h3>
+          <p>Doces que aquecem o coração</p>
+        </div>
+      </div>
+      <button class="cat-arrow" id="catNext" aria-label="Próxima categoria">›</button>
+    </div>
+
+    <div class="dish-showcase">
+      <button class="dish-arrow" id="dishPrev" aria-label="Prato anterior">‹</button>
+      <div class="dish-stage" id="dishStage"></div>
+      <button class="dish-arrow" id="dishNext" aria-label="Próximo prato">›</button>
+    </div>
+
+    <div class="dish-info-panel">
+      <h3 class="dish-name" id="dishName"></h3>
+      <p class="dish-desc" id="dishDesc"></p>
+      <p class="dish-price" id="dishPrice"></p>
+      <a href="delivery.html" class="btn-primary">Pedir agora 🛵</a>
+    </div>
+
+    <div class="dish-dots" id="dishDots"></div>
+  </section>
+
+  <!-- Seção do chef -->
+  <section id="chef" class="chef-section light-section">
+    <div class="nordeste-deco nordeste-deco-left" aria-hidden="true">
+      <svg viewBox="0 0 120 600" xmlns="http://www.w3.org/2000/svg">
+        <rect x="52" y="440" width="16" height="130" rx="8" fill="currentColor" opacity=".22" />
+        <circle cx="60" cy="80" r="28" fill="currentColor" opacity=".12" />
+        <path d="M20 260 Q60 220 100 260 L108 272 Q60 252 12 272 Z" fill="currentColor" opacity=".13" />
+        <circle cx="30" cy="340" r="3" fill="currentColor" opacity=".18" />
+        <circle cx="60" cy="330" r="3" fill="currentColor" opacity=".18" />
+        <circle cx="90" cy="340" r="3" fill="currentColor" opacity=".18" />
+      </svg>
+    </div>
+
+    <div class="chef-inner">
+      <div class="chef-img">
+        <img src="IMG/Chef.png" alt="Chef do Raízes do Nordeste">
+      </div>
+      <div class="chef-copy">
+        <p class="section-eyebrow">Nosso Chef</p>
+        <h2>A mão que transforma<br>ingrediente em memória</h2>
+        <p>Com mais de 20 anos de experiência na culinária nordestina, nosso chef viajou por todos os estados do
+          Nordeste para aprender as receitas mais autênticas diretamente das comunidades locais.</p>
+        <p>Cada prato que sai da nossa cozinha carrega uma história. Uma tradição que ele se orgulha de preservar e
+          compartilhar com cada cliente que visita o Raízes do Nordeste.</p>
+        <ul class="chef-feats">
+          <li><strong>20+</strong> Anos de experiência</li>
+          <li><strong>9</strong> Estados percorridos</li>
+          <li><strong>50+</strong> Receitas tradicionais</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé da página -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon">🪨</span>
+        <span class="logo-text">Raízes do <strong>Nordeste</strong></span>
+        <p>Cultura que alimenta, sabor que orgulha.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navegação</h4>
+        <a href="#hero" data-scroll="hero">Início</a>
+        <a href="#restaurante" data-scroll="restaurante">Restaurante</a>
+        <a href="#cardapio" data-scroll="cardapio">Cardápio</a>
+        <a href="#chef" data-scroll="chef">Chef</a>
+        <a href="delivery.html">Delivery</a>
+      </div>
+      <div class="footer-contact">
+        <h4>Contato</h4>
+        <p>📍 Rua do Sertão, 123 — Nordeste, BR</p>
+        <p>📞 (11) 9 4833-8287</p>
+        <p>⏰ Ter–Dom: 12h às 23h</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Raízes do Nordeste. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // mostra o usuário logado na nav se houver sessão salva
+    (function verificarSessaoNav() {
+      const usuario = JSON.parse(localStorage.getItem('raizes_usuario') || 'null');
+      if (usuario) {
+        document.getElementById('navLoginItem').style.display = 'none';
+        document.getElementById('navUserItem').style.display = 'list-item';
+        document.getElementById('navUserNome').textContent = usuario.nome.split(' ')[0];
+        const avatar = document.getElementById('navUserAvatar');
+        avatar.src = usuario.foto || 'https://ui-avatars.com/api/?name=' + encodeURIComponent(usuario.nome) + '&background=C4522A&color=fff';
+        document.getElementById('mobileLoginLink').style.display = 'none';
+        document.getElementById('mobilePerfilLink').style.display = 'block';
+      }
+    })();
+  </script>
+</body>
+
+</html>

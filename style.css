@@ -1,0 +1,1266 @@
+/* ============================================================
+   RAÍZES DO NORDESTE — style.css  (v2)
+   Palette: Terracotta #C4522A | Amber #E8A020 | Cream #FDF4E3
+            Dark #1A0F08 | Muted #8B6B52
+   ============================================================ */
+/* mapa geral do visual do site, com cores e estilos principais */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* reset básico pra não quebrar layout em navegadores diferentes */
+
+:root {
+  --terra: #C4522A;
+  --amber: #E8A020;
+  --cream: #FDF4E3;
+  --dark: #1A0F08;
+  --muted: #8B6B52;
+  --bg-warm: #2C160A;
+  --deco-color: #3D1A08;
+  /* dark terracotta used on light sections */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Barlow', system-ui, sans-serif;
+  --font-cond: 'Barlow Condensed', sans-serif;
+  --nav-h: 72px;
+  --radius: 16px;
+  --deco-w: 100px;
+  /* side decoration strip width */
+}
+
+/* variáveis globais: cores, fontes e medidas que o site todo usa */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* rolagem suave quando clica nos links internos */
+
+body {
+  font-family: var(--font-body);
+  background: var(--dark);
+  color: var(--cream);
+  overflow-x: hidden;
+}
+
+/* estilo base da página inteira */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* impede imagem de estourar o container */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* links sem sublinhado e herdando cor do contexto */
+
+/* ================================================================
+   BUTTONS
+   ================================================================ */
+/* botões principais e secundários do site */
+.btn-primary {
+  display: inline-block;
+  background: var(--amber);
+  color: var(--dark);
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: .75rem 1.8rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: background .2s, transform .15s, box-shadow .2s;
+}
+
+.btn-primary:hover {
+  background: #f5b030;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(232, 160, 32, .4);
+}
+
+.btn-outline {
+  display: inline-block;
+  border: 2px solid var(--cream);
+  color: var(--cream);
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: .73rem 1.8rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background .2s, color .2s, transform .15s;
+}
+
+.btn-outline:hover {
+  background: var(--cream);
+  color: var(--dark);
+  transform: translateY(-2px);
+}
+
+.section-eyebrow {
+  font-family: var(--font-cond);
+  font-weight: 600;
+  font-size: .85rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: .6rem;
+}
+
+/* textinho pequeno de destaque que aparece acima dos títulos */
+
+/* ================================================================
+   NAVBAR
+   ================================================================ */
+/* barra fixa do topo com navegação */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--nav-h);
+  background: rgba(26, 15, 8, .95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(232, 160, 32, .15);
+  transition: box-shadow .3s;
+}
+
+#navbar.scrolled {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, .5);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--cream);
+}
+
+.nav-logo .logo-icon {
+  font-size: 1.4rem;
+}
+
+.nav-logo strong {
+  color: var(--amber);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: .95rem;
+  color: rgba(253, 244, 227, .78);
+  transition: color .2s;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+/* underline hover for regular nav links */
+/* risquinho animado embaixo dos links normais */
+.nav-links a:not(.nav-delivery)::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--amber);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transition: transform .25s ease;
+  transform-origin: left;
+}
+
+.nav-links a:not(.nav-delivery):hover {
+  color: var(--amber);
+}
+
+.nav-links a:not(.nav-delivery):hover::after {
+  transform: scaleX(1);
+}
+
+/* active nav link highlight */
+/* mantém destacado o link da seção atual */
+.nav-links a.nav-active {
+  color: var(--amber);
+}
+
+.nav-links a.nav-active::after {
+  transform: scaleX(1);
+}
+
+/* botão de login na nav */
+.nav-login-btn {
+  background: transparent;
+  color: var(--amber, #E8A020);
+  border: 1.5px solid var(--amber, #E8A020);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: .88rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: .4rem 1.1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background .2s, color .2s;
+  white-space: nowrap;
+}
+
+.nav-login-btn:hover {
+  background: var(--amber, #E8A020);
+  color: #1A0F08;
+}
+
+/* avatar do usuário logado na nav */
+.nav-user-btn {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: .9rem;
+  text-decoration: none;
+}
+
+.nav-user-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid var(--amber, #E8A020);
+  object-fit: cover;
+  background: #3a1f0e;
+}
+
+.nav-links .nav-user-btn {
+  color: rgba(255, 255, 255, .85);
+}
+
+/* delivery pill */
+/* botão de delivery em formato de pílula */
+.nav-delivery {
+  background: var(--terra) !important;
+  color: #fff !important;
+  padding: .45rem 1.2rem !important;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: background .2s, transform .15s !important;
+}
+
+.nav-delivery::after {
+  display: none !important;
+}
+
+.nav-delivery:hover {
+  background: #d4612f !important;
+  transform: translateY(-1px) !important;
+}
+
+/* burger */
+/* ícone do menu hamburguer no mobile */
+.nav-burger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--cream);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* mobile menu */
+/* menu que abre em telas pequenas */
+.nav-mobile {
+  display: none;
+  flex-direction: column;
+  background: rgba(26, 15, 8, .98);
+  padding: 1rem 1.5rem;
+  gap: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, .06);
+}
+
+.nav-mobile a {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--cream);
+  padding: .5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .07);
+}
+
+.nav-mobile.open {
+  display: flex;
+}
+
+/* ================================================================
+   HERO
+   ================================================================ */
+/* primeira dobra: chamada principal com prato e ações */
+.hero {
+  min-height: 100vh;
+  padding-top: var(--nav-h);
+  background: radial-gradient(ellipse 80% 60% at 60% 40%, #5C2210 0%, #2C160A 55%, #1A0F08 100%);
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23E8A020' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: .4;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-cond);
+  font-weight: 600;
+  font-size: .85rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 1rem;
+}
+
+.hero-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--cream);
+  margin-bottom: 1.2rem;
+}
+
+.hero-headline em {
+  font-style: italic;
+  color: var(--amber);
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(253, 244, 227, .7);
+  max-width: 440px;
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.hero-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .08);
+  transition: background .2s, transform .15s;
+}
+
+.hero-social a:hover {
+  background: rgba(232, 160, 32, .25);
+  transform: scale(1.15);
+}
+
+/* dish spin */
+/* área do prato com efeito visual */
+.hero-dish-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 550px;
+  width: 100%;
+  overflow: visible;
+}
+
+.hero-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 160, 32, .25) 0%, transparent 70%);
+  pointer-events: none;
+  max-width: 100%;
+}
+
+.hero-dish {
+  width: auto;
+  max-width: 90vw;
+  height: auto;
+  filter: drop-shadow(0 20px 60px rgba(196, 82, 42, .4));
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes slowSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* animação de giro lento do prato */
+
+.spinning {
+  animation: slowSpin 30s linear infinite;
+}
+
+.hero-badge {
+  position: absolute;
+  bottom: 20px;
+  right: -10px;
+  background: var(--amber);
+  color: var(--dark);
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: .85rem;
+  letter-spacing: .08em;
+  padding: .4rem 1rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(232, 160, 32, .5);
+  z-index: 2;
+}
+
+.hero-scroll-hint {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--amber);
+  font-size: 1.4rem;
+  animation: bounce 2s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+/* animação do ícone de "desça" */
+
+/* ================================================================
+   NORDESTE SIDE DECORATIONS  (used on light-section)
+   ================================================================ */
+/* enfeites laterais nas seções claras */
+.light-section {
+  position: relative;
+  color: var(--dark);
+}
+
+/* gradient fade from top-dark into light background on each edge */
+/* gradiente nas bordas pra transição ficar mais suave */
+.light-section::before,
+.light-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: var(--deco-w);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* left edge — gradient from var(--deco-color) to transparent */
+/* borda esquerda com fade */
+.light-section::before {
+  left: 0;
+  background: linear-gradient(to right,
+      rgba(61, 26, 8, .55) 0%,
+      rgba(61, 26, 8, .18) 40%,
+      transparent 100%);
+}
+
+/* right edge */
+/* borda direita espelhando o efeito */
+.light-section::after {
+  right: 0;
+  background: linear-gradient(to left,
+      rgba(61, 26, 8, .55) 0%,
+      rgba(61, 26, 8, .18) 40%,
+      transparent 100%);
+}
+
+/* SVG illustration strips */
+/* faixas com ilustração em SVG nas laterais */
+.nordeste-deco {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: var(--deco-w);
+  pointer-events: none;
+  z-index: 1;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  color: var(--deco-color);
+}
+
+.nordeste-deco-left {
+  left: 0;
+}
+
+.nordeste-deco-right {
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.nordeste-deco svg {
+  width: 100%;
+  height: 100%;
+  /* tile vertically if section is taller than the viewBox */
+}
+
+/* make sure inner content sits above the decorations */
+/* garante que o conteúdo fique na frente dos enfeites */
+.light-section .band-inner,
+.light-section .chef-inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* ================================================================
+   ABOUT BAND  (section#restaurante)
+   ================================================================ */
+/* seção sobre o restaurante */
+.about-band {
+  background: var(--cream);
+  padding: 6rem 1.5rem;
+}
+
+.band-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.band-inner+.band-inner {
+  margin-top: 4rem;
+}
+
+.band-inner-reverse .band-img {
+  order: 2;
+}
+
+.band-inner-reverse .band-copy {
+  order: 1;
+}
+
+.band-img img {
+  border-radius: var(--radius);
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .18);
+}
+
+.band-copy h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+  color: var(--dark);
+}
+
+.band-copy p {
+  line-height: 1.8;
+  color: #5A3820;
+  margin-bottom: 1rem;
+}
+
+.band-copy .section-eyebrow {
+  color: var(--terra);
+}
+
+.band-copy .btn-primary {
+  margin-top: 1rem;
+}
+
+/* ================================================================
+   AMBIENT STRIP
+   ================================================================ */
+/* faixa com foto ambiente e citação */
+.ambient-strip {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+}
+
+.ambient-strip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.strip-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(26, 15, 8, .85) 0%, rgba(26, 15, 8, .3) 100%);
+  display: flex;
+  align-items: center;
+  padding: 0 8%;
+}
+
+.strip-overlay blockquote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  color: var(--cream);
+  max-width: 600px;
+  line-height: 1.4;
+  border-left: 4px solid var(--amber);
+  padding-left: 1.5rem;
+}
+
+/* ================================================================
+   MENU SECTION  (section#cardapio)
+   ================================================================ */
+/* seção do cardápio com categorias e pratos */
+.menu-section {
+  background: var(--bg-warm);
+  padding: 5rem 0 4rem;
+}
+
+.menu-section>* {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.menu-section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title.light {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--cream);
+}
+
+.menu-section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* category track */
+/* trilho onde troca o nome da categoria */
+.category-nav {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) 48px;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.category-track {
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
+  height: 110px;
+}
+
+.category-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform .5s cubic-bezier(.77, 0, .18, 1), opacity .4s;
+  pointer-events: none;
+}
+
+.category-slide.active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.cat-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: var(--cream);
+  line-height: 1;
+}
+
+.cat-arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid rgba(232, 160, 32, .5);
+  background: transparent;
+  color: var(--amber);
+  font-size: 1.6rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background .2s, border-color .2s, transform .15s;
+}
+
+.cat-arrow:hover {
+  background: var(--amber);
+  color: var(--dark);
+  border-color: var(--amber);
+  transform: scale(1.1);
+}
+
+/* dish stage */
+/* palco/carrossel visual dos pratos */
+.dish-carousel-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.dish-stage {
+  flex: 1;
+  height: 340px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dish-item {
+  position: absolute;
+  transition: transform .5s cubic-bezier(.77, 0, .18, 1), opacity .4s, filter .4s;
+  cursor: pointer;
+}
+
+.dish-item img {
+  border-radius: 50%;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, .5);
+  object-fit: cover;
+}
+
+.dish-item.center {
+  z-index: 3;
+  transform: translateX(0) scale(1);
+  opacity: 1;
+}
+
+.dish-item.center img {
+  width: 260px;
+  height: 260px;
+  box-shadow: 0 20px 60px rgba(196, 82, 42, .5);
+}
+
+.dish-item.left {
+  z-index: 1;
+  transform: translateX(-52%) scale(.68);
+  opacity: .45;
+  filter: brightness(.7);
+}
+
+.dish-item.left img {
+  width: 260px;
+  height: 260px;
+}
+
+.dish-item.right {
+  z-index: 1;
+  transform: translateX(52%) scale(.68);
+  opacity: .45;
+  filter: brightness(.7);
+}
+
+.dish-item.right img {
+  width: 260px;
+  height: 260px;
+}
+
+.dish-item.far-left {
+  z-index: 0;
+  transform: translateX(-85%) scale(.45);
+  opacity: .2;
+  filter: brightness(.5);
+}
+
+.dish-item.far-left img {
+  width: 260px;
+  height: 260px;
+}
+
+.dish-item.far-right {
+  z-index: 0;
+  transform: translateX(85%) scale(.45);
+  opacity: .2;
+  filter: brightness(.5);
+}
+
+.dish-item.far-right img {
+  width: 260px;
+  height: 260px;
+}
+
+.dish-item.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dish-arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid rgba(232, 160, 32, .4);
+  background: transparent;
+  color: var(--amber);
+  font-size: 1.6rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background .2s, border-color .2s, transform .15s;
+}
+
+.dish-arrow:hover {
+  background: var(--amber);
+  color: var(--dark);
+  border-color: var(--amber);
+  transform: scale(1.1);
+}
+
+/* dish info */
+/* bloco com nome, descrição e preço do prato */
+.dish-info-panel {
+  text-align: center;
+  min-height: 120px;
+  padding: 0 1rem;
+}
+
+.dish-name {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: .5rem;
+}
+
+.dish-desc {
+  color: rgba(253, 244, 227, .65);
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 0 auto .8rem;
+}
+
+.dish-price {
+  font-family: var(--font-cond);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--amber);
+  margin-bottom: 1rem;
+}
+
+.dish-info-panel .btn-primary {
+  display: inline-block;
+}
+
+/* dots */
+/* bolinhas de navegação do carrossel */
+.dish-dots {
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+  margin-top: 1.5rem;
+}
+
+.dish-showcase {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) 48px;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.dish-stage {
+  min-width: 0;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(232, 160, 32, .3);
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+
+.dot.active {
+  background: var(--amber);
+  transform: scale(1.3);
+}
+
+/* ================================================================
+   CHEF SECTION  (section#chef)
+   ================================================================ */
+/* seção apresentando o chef */
+.chef-section {
+  background: var(--cream);
+  padding: 6rem 1.5rem;
+}
+
+.chef-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.chef-img img {
+  border-radius: var(--radius);
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: top;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .18);
+}
+
+.chef-copy h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+  color: var(--dark);
+}
+
+.chef-copy p {
+  line-height: 1.8;
+  color: #5A3820;
+  margin-bottom: 1rem;
+}
+
+.chef-copy .section-eyebrow {
+  color: var(--terra);
+}
+
+.chef-feats {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.chef-feats li {
+  font-family: var(--font-body);
+  font-size: .85rem;
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+}
+
+.chef-feats li strong {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--terra);
+  font-weight: 700;
+}
+
+/* ================================================================
+   FOOTER
+   ================================================================ */
+/* rodapé com marca, links e contatos */
+.site-footer {
+  background: #0E0805;
+  padding: 4rem 1.5rem 0;
+  border-top: 1px solid rgba(232, 160, 32, .15);
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+}
+
+.footer-brand .logo-text {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: .5rem;
+}
+
+.footer-brand .logo-text strong {
+  color: var(--amber);
+}
+
+.footer-brand p {
+  font-size: .9rem;
+  color: rgba(253, 244, 227, .5);
+  margin-top: .5rem;
+}
+
+.footer-links,
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+  font-family: var(--font-cond);
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-size: .85rem;
+  color: var(--amber);
+  margin-bottom: .4rem;
+}
+
+.footer-links a {
+  font-size: .9rem;
+  color: rgba(253, 244, 227, .6);
+  transition: color .2s;
+}
+
+.footer-links a:hover {
+  color: var(--amber);
+}
+
+.footer-contact p {
+  font-size: .9rem;
+  color: rgba(253, 244, 227, .6);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, .06);
+  padding: 1.2rem 0;
+  text-align: center;
+  font-size: .8rem;
+  color: rgba(253, 244, 227, .35);
+}
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+/* ajustes pra funcionar bem em telas menores */
+@media (max-width: 900px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-text {
+    order: 2;
+  }
+
+  .hero-dish-wrap {
+    order: 1;
+  }
+
+  .hero-sub {
+    margin: 0 auto 2rem;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-social {
+    justify-content: center;
+  }
+
+  .hero-dish {
+    width: auto;
+    max-width: 85vw;
+  }
+
+  .hero-glow {
+    width: 350px;
+    height: 350px;
+  }
+
+  .band-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .chef-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .chef-img img {
+    aspect-ratio: 4/3;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-burger {
+    display: block;
+  }
+
+  .dish-item.far-left,
+  .dish-item.far-right {
+    display: none;
+  }
+
+  .category-nav,
+  .dish-showcase {
+    grid-template-columns: 40px minmax(0, 1fr) 40px;
+    gap: .75rem;
+  }
+
+  .dish-arrow,
+  .cat-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+  }
+
+  .dish-name {
+    font-size: 1.5rem;
+  }
+
+  .dish-desc {
+    max-width: 100%;
+  }
+
+  /* reduce side deco on tablet */
+  /* no tablet, enfeites laterais ficam mais finos */
+  :root {
+    --deco-w: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .dish-stage {
+    height: 260px;
+  }
+
+  .dish-item.center img,
+  .dish-item.left img,
+  .dish-item.right img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .ambient-strip {
+    height: 260px;
+  }
+
+  /* hide side deco on very small screens */
+  /* no celular pequeno, some com os enfeites pra limpar a tela */
+  .nordeste-deco {
+    display: none;
+  }
+
+  .light-section::before,
+  .light-section::after {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinning {
+    animation: none;
+  }
+
+  * {
+    transition-duration: 0.01ms !important;
+  }
+}
