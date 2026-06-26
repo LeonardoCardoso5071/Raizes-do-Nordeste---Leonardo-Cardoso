@@ -7,9 +7,9 @@
 // Cardápio base separado por categoria.
 const MENU = {
   entradas: [
-    { name: "Dadinho de Tapioca com Geleia de Pimenta", desc: "Crocantes cubinhos de tapioca fritos acompanhados de geleia artesanal de pimenta — entrada clássica que conquistou o Brasil.", price: "R$ 28,90", img: "IMG/Dadinho.png" },
-    { name: "Caldo de Sururu", desc: "Caldo rico e aromático feito com sururu fresco, azeite de dendê e ervas da caatinga. Reconfortante e autêntico.", price: "R$ 22,90", img: "IMG/Sururu.png" },
-    { name: "Macaxeira Frita com Aioli de Coriandro", desc: "Palitos dourados de macaxeira fresca com molho cremoso de coentro e alho — rusticidade encontra sofisticação.", price: "R$ 19,90", img: "IMG/Macaxeira.png" },
+    { name: "Dadinho de Tapioca com Geleia de Pimenta", desc: "Crocantes cubinhos de tapioca fritos acompanhados de geleia artesanal de pimenta — entrada clássica que conquistou o Brasil.", price: "R$ 28,90", img: "/Dadinho.png" },
+    { name: "Caldo de Sururu", desc: "Caldo rico e aromático feito com sururu fresco, azeite de dendê e ervas da caatinga. Reconfortante e autêntico.", price: "R$ 22,90", img: "/Sururu.png" },
+    { name: "Macaxeira Frita com Aioli de Coriandro", desc: "Palitos dourados de macaxeira fresca com molho cremoso de coentro e alho — rusticidade encontra sofisticação.", price: "R$ 19,90", img: "/Macaxeira.png" },
     { name: "Bruschetta Nordestina", desc: "Fatias de broa de milho torradas com carne de sol desfiada, queijo coalho grelhado e pico de gallo de tomate.", price: "R$ 25,90", img: "Gemini_Generated_Image_qd3an7qd3an7qd3a-Photoroom.png" }
   ],
   pratos: [
