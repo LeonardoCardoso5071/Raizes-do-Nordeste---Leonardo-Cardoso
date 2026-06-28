@@ -11,25 +11,25 @@ const CARDAPIO = {
     { id: 'e1', nome: "Dadinho de Tapioca com Geleia de Pimenta", descricao: "Crocantes cubinhos de tapioca fritos acompanhados de geleia artesanal de pimenta.", preco: 28.90, imagem: "IMG/Dadinho.png", etiqueta: "⭐ Popular", categoria: 'entradas' },
     { id: 'e2', nome: "Caldo de Sururu", descricao: "Caldo rico e aromático feito com sururu fresco, azeite de dendê e ervas da caatinga.", preco: 22.90, imagem: "IMG/Sururu.png", etiqueta: null, categoria: 'entradas' },
     { id: 'e3', nome: "Macaxeira Frita com Aioli de Coriandro", descricao: "Palitos dourados de macaxeira fresca com molho cremoso de coentro e alho.", preco: 19.90, imagem: "IMG/Macaxeira.png", etiqueta: null, categoria: 'entradas' },
-    { id: 'e4', nome: "Bruschetta Nordestina", descricao: "Fatias de broa de milho torradas com carne de sol desfiada e queijo coalho grelhado.", preco: 25.90, imagem: "Gemini_Generated_Image_p9m5nzp9m5nzp9m5-Photoroom.png", etiqueta: "🆕 Novo", categoria: 'entradas' }
+    { id: 'e4', nome: "Bruschetta Nordestina", descricao: "Fatias de broa de milho torradas com carne de sol desfiada e queijo coalho grelhado.", preco: 25.90, imagem: "IMG/Bruschetta.png", etiqueta: "🆕 Novo", categoria: 'entradas' }
   ],
   pratos: [
-    { id: 'p1', nome: "Baião de Dois Completo", descricao: "Arroz com feijão fradinho, queijo coalho, linguiça, carne de sol e bacon defumado.", preco: 54.90, imagem: "Gemini_Generated_Image_p9m5nzp9m5nzp9m5-Photoroom.png", etiqueta: "⭐ Popular", categoria: 'pratos' },
-    { id: 'p2', nome: "Carne de Sol com Macaxeira", descricao: "Macia carne de sol ao ponto, com purê de macaxeira cremoso e manteiga de garrafa.", preco: 62.90, imagem: "Gemini_Generated_Image_p9m5nzp9m5nzp9m5-Photoroom.png", etiqueta: null, categoria: 'pratos' },
-    { id: 'p3', nome: "Caldeirada de Frutos do Mar", descricao: "Camarão, peixe, mariscos e lagostim no molho de tomate com coco e ervas.", preco: 78.90, imagem: "Gemini_Generated_Image_qd3an7qd3an7qd3a-Photoroom.png", etiqueta: "🌊 Frutos do Mar", categoria: 'pratos' },
-    { id: 'p4', nome: "Frango Caipira Assado", descricao: "Frango caipira marinado 24h, assado lentamente com batata doce e farofa de dendê.", preco: 58.90, imagem: "Gemini_Generated_Image_p9m5nzp9m5nzp9m5-Photoroom.png", etiqueta: null, categoria: 'pratos' },
-    { id: 'p5', nome: "Buchada de Bode", descricao: "Ícone da culinária sertaneja, preparada com miúdos temperados e cozida na bucha.", preco: 45.90, imagem: "Gemini_Generated_Image_qd3an7qd3an7qd3a-Photoroom.png", etiqueta: "🐐 Tradicional", categoria: 'pratos' },
-    { id: 'p6', nome: "Moqueca de Camarão Nordestina", descricao: "Camarões frescos cozidos em leite de coco, azeite de dendê e coentro abundante.", preco: 72.90, imagem: "Gemini_Generated_Image_p9m5nzp9m5nzp9m5-Photoroom.png", etiqueta: null, categoria: 'pratos' },
-    { id: 'p7', nome: "Sarapatel com Pirão", descricao: "Sarapatel com vísceras temperadas com ervas do mato, servido com pirão de fubá.", preco: 48.90, imagem: "Gemini_Generated_Image_qd3an7qd3an7qd3a-Photoroom.png", etiqueta: null, categoria: 'pratos' },
-    { id: 'p8', nome: "Costela de Boi na Pedra", descricao: "Costela bovina com 8h de cozimento lento, servida sobre pedra quente com farofa.", preco: 89.90, imagem: "Gemini_Generated_Image_p9m5nzp9m5nzp9m5-Photoroom.png", etiqueta: "🔥 Chef Choice", categoria: 'pratos' },
-    { id: 'p9', nome: "Peixe Assado na Folha de Bananeira", descricao: "Peixe fresco do dia marinado com limão e ervas, assado na folha de bananeira.", preco: 68.90, imagem: "Gemini_Generated_Image_qd3an7qd3an7qd3a-Photoroom.png", etiqueta: null, categoria: 'pratos' },
-    { id: 'p10', nome: "Feijão Verde com Charque", descricao: "Feijão verde fresquinho cozido com charque, pimenta-de-cheiro e manteiga de garrafa.", preco: 42.90, imagem: "Gemini_Generated_Image_p9m5nzp9m5nzp9m5-Photoroom.png", etiqueta: null, categoria: 'pratos' }
+    { id: 'p1', nome: "Baião de Dois Completo", descricao: "Arroz com feijão fradinho, queijo coalho, linguiça, carne de sol e bacon defumado.", preco: 54.90, imagem: "IMG/Baiao.png", etiqueta: "⭐ Popular", categoria: 'pratos' },
+    { id: 'p2', nome: "Carne de Sol com Macaxeira", descricao: "Macia carne de sol ao ponto, com purê de macaxeira cremoso e manteiga de garrafa.", preco: 62.90, imagem: "IMG/Carnedesol.png", etiqueta: null, categoria: 'pratos' },
+    { id: 'p3', nome: "Caldeirada de Frutos do Mar", descricao: "Camarão, peixe, mariscos e lagostim no molho de tomate com coco e ervas.", preco: 78.90, imagem: "IMG/Caldeirada.png", etiqueta: "🌊 Frutos do Mar", categoria: 'pratos' },
+    { id: 'p4', nome: "Frango Caipira Assado", descricao: "Frango caipira marinado 24h, assado lentamente com batata doce e farofa de dendê.", preco: 58.90, imagem: "IMG/Frango.png", etiqueta: null, categoria: 'pratos' },
+    { id: 'p5', nome: "Buchada de Bode", descricao: "Ícone da culinária sertaneja, preparada com miúdos temperados e cozida na bucha.", preco: 45.90, imagem: "IMG/Buchada.png", etiqueta: "🐐 Tradicional", categoria: 'pratos' },
+    { id: 'p6', nome: "Moqueca de Camarão Nordestina", descricao: "Camarões frescos cozidos em leite de coco, azeite de dendê e coentro abundante.", preco: 72.90, imagem: "IMG/Moqueca.png", etiqueta: null, categoria: 'pratos' },
+    { id: 'p7', nome: "Sarapatel com Pirão", descricao: "Sarapatel com vísceras temperadas com ervas do mato, servido com pirão de fubá.", preco: 48.90, imagem: "IMG/Sarapatel.png", etiqueta: null, categoria: 'pratos' },
+    { id: 'p8', nome: "Costela de Boi na Pedra", descricao: "Costela bovina com 8h de cozimento lento, servida sobre pedra quente com farofa.", preco: 89.90, imagem: "IMG/Costela.png", etiqueta: "🔥 Chef Choice", categoria: 'pratos' },
+    { id: 'p9', nome: "Peixe Assado na Folha de Bananeira", descricao: "Peixe fresco do dia marinado com limão e ervas, assado na folha de bananeira.", preco: 68.90, imagem: "IMG/Peixe.png", etiqueta: null, categoria: 'pratos' },
+    { id: 'p10', nome: "Feijão Verde com Charque", descricao: "Feijão verde fresquinho cozido com charque, pimenta-de-cheiro e manteiga de garrafa.", preco: 42.90, imagem: "IMG/Feijao.png", etiqueta: null, categoria: 'pratos' }
   ],
   sobremesas: [
-    { id: 's1', nome: "Cartola", descricao: "Banana frita com queijo coalho derretido, canela e açúcar mascavo.", preco: 18.90, imagem: "Gemini_Generated_Image_qd3an7qd3an7qd3a-Photoroom.png", etiqueta: "⭐ Popular", categoria: 'sobremesas' },
-    { id: 's2', nome: "Tapioca com Coco Queimado", descricao: "Tapioca morna com coco queimado, doce de leite caseiro e flor de sal.", preco: 16.90, imagem: "Gemini_Generated_Image_p9m5nzp9m5nzp9m5-Photoroom.png", etiqueta: null, categoria: 'sobremesas' },
-    { id: 's3', nome: "Pudim de Rapadura", descricao: "Clássico pudim feito com rapadura pura, ovos caipiras e leite de coco fresco.", preco: 15.90, imagem: "Gemini_Generated_Image_qd3an7qd3an7qd3a-Photoroom.png", etiqueta: null, categoria: 'sobremesas' },
-    { id: 's4', nome: "Bolo de Milho Verde com Calda de Goiaba", descricao: "Bolo úmido de milho verde com calda de goiaba fresca artesanal.", preco: 14.90, imagem: "Gemini_Generated_Image_p9m5nzp9m5nzp9m5-Photoroom.png", etiqueta: "🆕 Novo", categoria: 'sobremesas' }
+    { id: 's1', nome: "Cartola", descricao: "Banana frita com queijo coalho derretido, canela e açúcar mascavo.", preco: 18.90, imagem: "IMG/Cartola.png", etiqueta: "⭐ Popular", categoria: 'sobremesas' },
+    { id: 's2', nome: "Tapioca com Coco Queimado", descricao: "Tapioca morna com coco queimado, doce de leite caseiro e flor de sal.", preco: 16.90, imagem: "IMG/Tapioca.png", etiqueta: null, categoria: 'sobremesas' },
+    { id: 's3', nome: "Pudim de Rapadura", descricao: "Clássico pudim feito com rapadura pura, ovos caipiras e leite de coco fresco.", preco: 15.90, imagem: "IMG/Pudim.png", etiqueta: null, categoria: 'sobremesas' },
+    { id: 's4', nome: "Bolo de Milho Verde com Calda de Goiaba", descricao: "Bolo úmido de milho verde com calda de goiaba fresca artesanal.", preco: 14.90, imagem: "IMG/Bolo.png", etiqueta: "🆕 Novo", categoria: 'sobremesas' }
   ]
 };
 
@@ -68,7 +68,14 @@ const modalSucesso = document.getElementById('modalSucesso');
 const numeroPedidoSucesso = document.getElementById('numeroPedidoSucesso');
 const btnNovosPedido = document.getElementById('btnNovosPedido');
 const avisoLoginNecessario = document.getElementById('avisoLoginNecessario');
-const campoEnderecoEntrega = document.getElementById('campoEnderecoEntrega');
+const formularioFrete = document.getElementById('formularioFrete');
+const freteCamposDetalhados = document.getElementById('freteCamposDetalhados');
+const freteCep = document.getElementById('freteCep');
+const freteRua = document.getElementById('freteRua');
+const freteBairro = document.getElementById('freteBairro');
+const freteCidade = document.getElementById('freteCidade');
+const freteNumero = document.getElementById('freteNumero');
+const freteComplemento = document.getElementById('freteComplemento');
 const resultadoFrete = document.getElementById('resultadoFrete');
 const selectEnderecoSalvo = document.getElementById('selectEnderecoSalvo');
 
@@ -123,12 +130,48 @@ function enderecoParaTexto(endereco) {
     .join(', ');
 }
 
+function obterEnderecoFreteFormulario() {
+  const cep = freteCep ? freteCep.value.trim() : '';
+  const rua = freteRua ? freteRua.value.trim() : '';
+  const bairro = freteBairro ? freteBairro.value.trim() : '';
+  const cidade = freteCidade ? freteCidade.value.trim() : '';
+  const numero = freteNumero ? freteNumero.value.trim() : '';
+  const complemento = freteComplemento ? freteComplemento.value.trim() : '';
+
+  return {
+    cep,
+    rua,
+    bairro,
+    cidade,
+    numero,
+    complemento,
+    texto: [rua, numero, bairro, cidade, cep, complemento].filter(Boolean).join(', '),
+    atualizadoEm: Date.now()
+  };
+}
+
+function preencherCamposEnderecoFrete(endereco) {
+  if (!endereco) return;
+  if (freteCep) freteCep.value = endereco.cep || '';
+  if (freteRua) freteRua.value = endereco.rua || '';
+  if (freteBairro) freteBairro.value = endereco.bairro || '';
+  if (freteCidade) freteCidade.value = endereco.cidade || '';
+  if (freteNumero) freteNumero.value = endereco.numero || '';
+  if (freteComplemento) freteComplemento.value = endereco.complemento || '';
+}
+
+function abrirFormularioFrete() {
+  if (formularioFrete) formularioFrete.classList.remove('is-hidden');
+  if (freteCamposDetalhados) freteCamposDetalhados.classList.add('is-hidden');
+  if (freteCep) freteCep.focus();
+}
+
 function preencherEnderecoEntregaSalvo() {
   const usuario = buscarUsuarioLogado();
   const listaEnderecos = normalizarListaEnderecos(usuario);
   const endereco = listaEnderecos[0] || JSON.parse(localStorage.getItem('raizes_endereco_entrega') || 'null');
-  if (campoEnderecoEntrega && endereco) {
-    campoEnderecoEntrega.value = enderecoParaTexto(endereco);
+  if (endereco) {
+    preencherCamposEnderecoFrete(endereco);
   }
 
   if (selectEnderecoSalvo) {
@@ -159,10 +202,6 @@ function carregarEnderecoSelecionadoCheckout(indice) {
   const endereco = listaEnderecos[Number(indice) || 0];
   if (!endereco) return;
 
-  if (campoEnderecoEntrega) {
-    campoEnderecoEntrega.value = endereco.texto || '';
-  }
-
   const rua = document.getElementById('checkRua');
   const bairro = document.getElementById('checkBairro');
   const cidade = document.getElementById('checkCidade');
@@ -183,27 +222,26 @@ function carregarEnderecoSelecionadoCheckout(indice) {
 }
 
 function salvarEnderecoEntrega(mostrarMensagem = true) {
-  if (!campoEnderecoEntrega) return false;
-  const texto = campoEnderecoEntrega.value.trim();
-  if (!texto) {
-    if (mostrarMensagem) exibirToast('Informe seu endereço.');
+  const endereco = obterEnderecoFreteFormulario();
+  if (!endereco.cep || !endereco.rua || !endereco.bairro || !endereco.cidade || !endereco.numero) {
+    if (mostrarMensagem) exibirToast('Preencha CEP, rua, bairro, cidade e número.');
     return false;
   }
 
-  const registro = { texto, atualizadoEm: Date.now() };
+  const registro = { ...endereco };
   localStorage.setItem('raizes_endereco_entrega', JSON.stringify(registro));
 
   const usuario = buscarUsuarioLogado();
   if (usuario) {
     const dadosCompletos = buscarDadosCompletosUsuario(usuario.id) || usuario;
     dadosCompletos.enderecos = Array.isArray(dadosCompletos.enderecos) ? dadosCompletos.enderecos : [];
-    dadosCompletos.enderecos = [registro, ...dadosCompletos.enderecos.filter(e => enderecoParaTexto(e) !== texto)].slice(0, 2);
+    dadosCompletos.enderecos = [registro, ...dadosCompletos.enderecos.filter(e => enderecoParaTexto(e) !== endereco.texto)].slice(0, 2);
     salvarDadosUsuario(dadosCompletos);
   }
 
   if (resultadoFrete) {
     resultadoFrete.classList.add('visivel');
-    resultadoFrete.innerHTML = `📍 <strong>Endereço salvo:</strong> ${texto}`;
+    resultadoFrete.innerHTML = `📍 <strong>Endereço salvo:</strong> ${endereco.texto}`;
   }
 
   if (mostrarMensagem) exibirToast('✅ Endereço salvo.');
@@ -264,25 +302,67 @@ function calcularFretePorQuantidade(totalItens) {
 // ================================================================
 // BUSCA DE CEP (ViaCEP)
 // ================================================================
-async function buscarCep(cep) {
+async function buscarCep(cep, config = {}) {
+  const {
+    cepId = 'checkCep',
+    ruaId = 'checkRua',
+    bairroId = 'checkBairro',
+    cidadeId = 'checkCidade',
+    numeroId = 'checkNumero',
+    camposDetalhadosId = null,
+    focarNumero = true,
+    mensagemSucesso = '✅ Endereço preenchido!'
+  } = config;
+
   const numerosApenas = cep.replace(/\D/g, '');
   if (numerosApenas.length !== 8) return;
 
   // formata enquanto digita: 01310100 → 01310-100
-  document.getElementById('checkCep').value = numerosApenas.replace(/(\d{5})(\d{3})/, '$1-$2');
+  const campoCep = document.getElementById(cepId);
+  const campoRua = document.getElementById(ruaId);
+  const campoBairro = document.getElementById(bairroId);
+  const campoCidade = document.getElementById(cidadeId);
+  const campoNumero = document.getElementById(numeroId);
+
+  if (campoCep) campoCep.value = numerosApenas.replace(/(\d{5})(\d{3})/, '$1-$2');
 
   try {
     const resposta = await fetch(`https://viacep.com.br/ws/${numerosApenas}/json/`);
     const dados = await resposta.json();
-    if (dados.erro) { exibirToast('CEP não encontrado.'); return; }
+    if (dados.erro) { exibirToast('CEP não encontrado.'); return false; }
 
-    document.getElementById('checkRua').value = dados.logradouro || '';
-    document.getElementById('checkBairro').value = dados.bairro || '';
-    document.getElementById('checkCidade').value = `${dados.localidade} / ${dados.uf}`;
-    document.getElementById('checkNumero').focus();
-    exibirToast('✅ Endereço preenchido!');
+    if (campoRua) campoRua.value = dados.logradouro || '';
+    if (campoBairro) campoBairro.value = dados.bairro || '';
+    if (campoCidade) campoCidade.value = `${dados.localidade} / ${dados.uf}`;
+
+    if (camposDetalhadosId) {
+      const bloco = document.getElementById(camposDetalhadosId);
+      if (bloco) bloco.classList.remove('is-hidden');
+    }
+
+    if (focarNumero && campoNumero) campoNumero.focus();
+    if (mensagemSucesso) exibirToast(mensagemSucesso);
+    return true;
   } catch {
     exibirToast('Erro ao buscar CEP. Verifique a conexão.');
+    return false;
+  }
+}
+
+async function confirmarCepFrete() {
+  if (!freteCep) return;
+  const sucesso = await buscarCep(freteCep.value, {
+    cepId: 'freteCep',
+    ruaId: 'freteRua',
+    bairroId: 'freteBairro',
+    cidadeId: 'freteCidade',
+    numeroId: 'freteNumero',
+    camposDetalhadosId: 'freteCamposDetalhados',
+    mensagemSucesso: '✅ CEP confirmado. Complete os dados abaixo.'
+  });
+
+  if (sucesso && freteCamposDetalhados) {
+    freteCamposDetalhados.classList.remove('is-hidden');
   }
 }
 
@@ -506,11 +586,6 @@ function preencherDadosCheckoutEndereco(usuario) {
   const listaEnderecos = normalizarListaEnderecos(usuario);
   const endereco = listaEnderecos[0] || JSON.parse(localStorage.getItem('raizes_endereco_entrega') || 'null');
   if (!endereco) return;
-
-  const enderecoTexto = enderecoParaTexto(endereco);
-  if (campoEnderecoEntrega && enderecoTexto) {
-    campoEnderecoEntrega.value = enderecoTexto;
-  }
 
   const rua = document.getElementById('checkRua');
   const bairro = document.getElementById('checkBairro');

@@ -64,13 +64,47 @@
     <!-- endereço do cliente -->
     <div class="secao-frete">
       <h2>📍 Seu endereço</h2>
-      <div class="grupo-campo">
-        <label>Coloque seu endereço</label>
-        <input type="text" id="campoEnderecoEntrega" class="campo-form" placeholder="Rua, número, bairro, cidade..."
-          autocomplete="street-address">
+      <p class="texto-frete-ajuda">Clique em calcular frete para abrir a busca por CEP e, depois, liberar os demais
+        campos do endereço.</p>
+      <button class="btn-calcular-frete" type="button" onclick="abrirFormularioFrete()">Calcular frete</button>
+      <div id="formularioFrete" class="frete-form is-hidden">
+        <div class="grupo-campo">
+          <label>CEP</label>
+          <div class="frete-linha-cep">
+            <input type="text" id="freteCep" class="campo-form" placeholder="00000-000" maxlength="9"
+              autocomplete="postal-code" inputmode="numeric">
+            <button class="btn-frete-confirmar" type="button" onclick="confirmarCepFrete()">OK</button>
+          </div>
+        </div>
+        <div id="freteCamposDetalhados" class="is-hidden">
+          <div class="grupo-campo">
+            <label>Rua</label>
+            <input type="text" id="freteRua" class="campo-form" placeholder="Rua, avenida, travessa...">
+          </div>
+          <div class="linha-campos">
+            <div class="grupo-campo">
+              <label>Bairro</label>
+              <input type="text" id="freteBairro" class="campo-form" placeholder="Bairro">
+            </div>
+            <div class="grupo-campo">
+              <label>Cidade</label>
+              <input type="text" id="freteCidade" class="campo-form" placeholder="Cidade">
+            </div>
+          </div>
+          <div class="linha-campos">
+            <div class="grupo-campo">
+              <label>Número</label>
+              <input type="text" id="freteNumero" class="campo-form" placeholder="123">
+            </div>
+            <div class="grupo-campo">
+              <label>Complemento</label>
+              <input type="text" id="freteComplemento" class="campo-form" placeholder="Apto, bloco, referência...">
+            </div>
+          </div>
+          <button class="btn-calcular-frete btn-salvar-frete" type="button"
+            onclick="salvarEnderecoEntrega()">Salvar</button>
+        </div>
       </div>
-      <p class="texto-frete-ajuda">Se o endereço já estiver salvo no seu login, ele será preenchido automaticamente.</p>
-      <button class="btn-calcular-frete" onclick="salvarEnderecoEntrega()">Salvar endereço</button>
       <div class="resultado-frete" id="resultadoFrete"></div>
     </div>
 

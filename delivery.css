@@ -233,6 +233,49 @@ a {
   margin-bottom: 2rem;
 }
 
+.frete-form {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #efe0cc;
+  border-radius: 16px;
+  background: #fffaf4;
+}
+
+.frete-linha-cep {
+  display: flex;
+  gap: .6rem;
+  align-items: flex-start;
+}
+
+.frete-linha-cep .campo-form {
+  flex: 1;
+}
+
+.btn-frete-confirmar {
+  background: var(--amber);
+  color: var(--dark);
+  border: none;
+  border-radius: 10px;
+  padding: .7rem 1rem;
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: .9rem;
+  letter-spacing: .05em;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform .15s, background .2s;
+}
+
+.btn-frete-confirmar:hover {
+  background: #f5b030;
+  transform: translateY(-1px);
+}
+
+.btn-salvar-frete {
+  width: 100%;
+  margin-top: .4rem;
+}
+
 .secao-frete h2 {
   font-family: var(--font-display);
   font-size: 1.15rem;

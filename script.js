@@ -10,25 +10,25 @@ const MENU = {
     { name: "Dadinho de Tapioca com Geleia de Pimenta", desc: "Crocantes cubinhos de tapioca fritos acompanhados de geleia artesanal de pimenta — entrada clássica que conquistou o Brasil.", price: "R$ 28,90", img: "IMG/Dadinho.png" },
     { name: "Caldo de Sururu", desc: "Caldo rico e aromático feito com sururu fresco, azeite de dendê e ervas da caatinga. Reconfortante e autêntico.", price: "R$ 22,90", img: "IMG/Sururu.png" },
     { name: "Macaxeira Frita com Aioli de Coriandro", desc: "Palitos dourados de macaxeira fresca com molho cremoso de coentro e alho — rusticidade encontra sofisticação.", price: "R$ 19,90", img: "IMG/Macaxeira.png" },
-    { name: "Bruschetta Nordestina", desc: "Fatias de broa de milho torradas com carne de sol desfiada, queijo coalho grelhado e pico de gallo de tomate.", price: "R$ 25,90", img: "Gemini_Generated_Image_qd3an7qd3an7qd3a-Photoroom.png" }
+    { name: "Bruschetta Nordestina", desc: "Fatias de broa de milho torradas com carne de sol desfiada, queijo coalho grelhado e pico de gallo de tomate.", price: "R$ 25,90", img: "IMG/Bruschetta.png" }
   ],
   pratos: [
-    { name: "Baião de Dois Completo", desc: "O clássico dos clássicos: arroz com feijão fradinho, queijo coalho, linguiça, carne de sol e bacon defumado.", price: "R$ 54,90", img: "Gemini_Generated_Image_p9m5nzp9m5nzp9m5-Photoroom.png" },
-    { name: "Carne de Sol com Macaxeira", desc: "Macia carne de sol ao ponto, com purê de macaxeira cremoso, manteiga de garrafa e vinagrete.", price: "R$ 62,90", img: "Gemini_Generated_Image_p9m5nzp9m5nzp9m5-Photoroom.png" },
-    { name: "Caldeirada de Frutos do Mar", desc: "Caldeirada encorpada com camarão, peixe, mariscos e lagostim no molho de tomate com coco e ervas.", price: "R$ 78,90", img: "Gemini_Generated_Image_p9m5nzp9m5nzp9m5-Photoroom.png" },
-    { name: "Frango Caipira Assado", desc: "Frango caipira marinado 24h em tempero nordestino, assado lentamente com batata doce e farofa de dendê.", price: "R$ 58,90", img: "Gemini_Generated_Image_p9m5nzp9m5nzp9m5-Photoroom.png" },
-    { name: "Buchada de Bode", desc: "Ícone da culinária sertaneja, preparada com miúdos temperados e cozida na própria bucha do animal.", price: "R$ 45,90", img: "Gemini_Generated_Image_p9m5nzp9m5nzp9m5-Photoroom.png" },
-    { name: "Moqueca de Camarão Nordestina", desc: "Camarões frescos cozidos em leite de coco, azeite de dendê, tomate, pimentão e coentro abundante.", price: "R$ 72,90", img: "Gemini_Generated_Image_p9m5nzp9m5nzp9m5-Photoroom.png" },
-    { name: "Sarapatel com Pirão", desc: "Sarapatel com vísceras temperadas com ervas do mato, servido com pirão de fubá dourado.", price: "R$ 48,90", img: "Gemini_Generated_Image_p9m5nzp9m5nzp9m5-Photoroom.png" },
-    { name: "Costela de Boi na Pedra", desc: "Costela bovina com 8h de cozimento lento, servida sobre pedra quente com vinagrete de baião e farofa.", price: "R$ 89,90", img: "Gemini_Generated_Image_p9m5nzp9m5nzp9m5-Photoroom.png" },
-    { name: "Peixe Assado na Folha de Bananeira", desc: "Peixe fresco do dia marinado com limão e ervas, assado na folha de bananeira com acompanhamentos.", price: "R$ 68,90", img: "Gemini_Generated_Image_p9m5nzp9m5nzp9m5-Photoroom.png" },
-    { name: "Feijão Verde com Charque", desc: "Feijão verde fresquinho cozido com charque, pimenta-de-cheiro, tomate e um fio de manteiga de garrafa.", price: "R$ 42,90", img: "Gemini_Generated_Image_p9m5nzp9m5nzp9m5-Photoroom.png" }
+    { name: "Baião de Dois Completo", desc: "O clássico dos clássicos: arroz com feijão fradinho, queijo coalho, linguiça, carne de sol e bacon defumado.", price: "R$ 54,90", img: "IMG/Pratodochef.png" },
+    { name: "Carne de Sol com Macaxeira", desc: "Macia carne de sol ao ponto, com purê de macaxeira cremoso, manteiga de garrafa e vinagrete.", price: "R$ 62,90", img: "IMG/Carnedesol.png" },
+    { name: "Caldeirada de Frutos do Mar", desc: "Caldeirada encorpada com camarão, peixe, mariscos e lagostim no molho de tomate com coco e ervas.", price: "R$ 78,90", img: "IMG/Caldeirada.png" },
+    { name: "Frango Caipira Assado", desc: "Frango caipira marinado 24h em tempero nordestino, assado lentamente com batata doce e farofa de dendê.", price: "R$ 58,90", img: "IMG/Frango.png" },
+    { name: "Buchada de Bode", desc: "Ícone da culinária sertaneja, preparada com miúdos temperados e cozida na própria bucha do animal.", price: "R$ 45,90", img: "IMG/Buchada.png" },
+    { name: "Moqueca de Camarão Nordestina", desc: "Camarões frescos cozidos em leite de coco, azeite de dendê, tomate, pimentão e coentro abundante.", price: "R$ 72,90", img: "IMG/Moqueca.png" },
+    { name: "Sarapatel com Pirão", desc: "Sarapatel com vísceras temperadas com ervas do mato, servido com pirão de fubá dourado.", price: "R$ 48,90", img: "IMG/Sarapatel.png" },
+    { name: "Costela de Boi na Pedra", desc: "Costela bovina com 8h de cozimento lento, servida sobre pedra quente com vinagrete de baião e farofa.", price: "R$ 89,90", img: "IMG/Costela.png" },
+    { name: "Peixe Assado na Folha de Bananeira", desc: "Peixe fresco do dia marinado com limão e ervas, assado na folha de bananeira com acompanhamentos.", price: "R$ 68,90", img: "IMG/Peixe.png" },
+    { name: "Feijão Verde com Charque", desc: "Feijão verde fresquinho cozido com charque, pimenta-de-cheiro, tomate e um fio de manteiga de garrafa.", price: "R$ 42,90", img: "IMG/Feijao.png" }
   ],
   sobremesas: [
-    { name: "Cartola", desc: "A rainha das sobremesas nordestinas: banana frita com queijo coalho derretido, canela e açúcar mascavo.", price: "R$ 18,90", img: "Gemini_Generated_Image_qd3an7qd3an7qd3a-Photoroom.png" },
-    { name: "Tapioca com Coco Queimado", desc: "Tapioca morna recheada com coco queimado, doce de leite caseiro e uma pitada de flor de sal.", price: "R$ 16,90", img: "Gemini_Generated_Image_qd3an7qd3an7qd3a-Photoroom.png" },
-    { name: "Pudim de Rapadura", desc: "Clássico pudim nordestino feito com rapadura pura, ovos caipiras e leite de coco fresco.", price: "R$ 15,90", img: "Gemini_Generated_Image_qd3an7qd3an7qd3a-Photoroom.png" },
-    { name: "Bolo de Milho Verde com Calda de Goiaba", desc: "Bolo úmido de milho verde com calda de goiaba fresca artesanal. Puro afeto em forma de fatia.", price: "R$ 14,90", img: "Gemini_Generated_Image_qd3an7qd3an7qd3a-Photoroom.png" }
+    { name: "Cartola", desc: "A rainha das sobremesas nordestinas: banana frita com queijo coalho derretido, canela e açúcar mascavo.", price: "R$ 18,90", img: "IMG/Cartola.png" },
+    { name: "Tapioca com Coco Queimado", desc: "Tapioca morna recheada com coco queimado, doce de leite caseiro e uma pitada de flor de sal.", price: "R$ 16,90", img: "IMG/Tapioca.png" },
+    { name: "Pudim de Rapadura", desc: "Clássico pudim nordestino feito com rapadura pura, ovos caipiras e leite de coco fresco.", price: "R$ 15,90", img: "IMG/Pudim.png" },
+    { name: "Bolo de Milho Verde com Calda de Goiaba", desc: "Bolo úmido de milho verde com calda de goiaba fresca artesanal. Puro afeto em forma de fatia.", price: "R$ 14,90", img: "IMG/Bolo.png" }
   ]
 };
 
