@@ -171,6 +171,17 @@ a {
   color: var(--amber);
 }
 
+.nav-logo img {
+  height: 48px;
+  width: auto;
+  transition: opacity .2s, transform .2s;
+}
+
+.nav-logo img:hover {
+  opacity: .85;
+  transform: scale(1.04);
+}
+
 .nav-links {
   list-style: none;
   display: flex;
