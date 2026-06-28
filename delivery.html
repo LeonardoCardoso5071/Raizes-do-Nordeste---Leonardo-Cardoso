@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delivery — Raízes do Nordeste</title>
+  <link rel="stylesheet" href="delivery.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- barra de navegação -->
+  <nav class="d-nav">
+    <div class="d-nav-inner">
+      <a href="index.html" class="d-back">← Voltar ao site</a>
+      <a class="nav-logo" href="index.html">
+        <span>🪨</span>
+        <span>Raízes do <strong>Nordeste</strong></span>
+      </a>
+      <div class="d-nav-actions">
+        <!-- login / perfil na nav do delivery -->
+        <span id="navLoginDelivery">
+          <a href="login.html" class="nav-login-btn">Entrar</a>
+        </span>
+        <span id="navUserDelivery" style="display:none">
+          <a href="perfil.html" class="nav-user-mini">
+            <img src="" alt="" id="navAvatarDelivery">
+            <span id="navNomeDelivery">Você</span>
+          </a>
+        </span>
+        <button class="cart-btn" id="botaoCarrinho" aria-label="Abrir carrinho">
+          🛒 <span class="cart-count" id="contagemCarrinho">0</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero de destaque -->
+  <div class="d-hero">
+    <div class="d-hero-inner">
+      <div>
+        <p class="d-hero-eyebrow">🛵 Delivery disponível</p>
+        <h1 class="d-hero-title">Sabor nordestino<br><em>na sua porta</em></h1>
+        <p class="d-hero-sub">Pedido mínimo R$ 35 · Entrega estimada 35–50 min</p>
+      </div>
+      <img src="IMG/Entrega.png" alt="Chef Raízes do Nordeste" class="d-hero-img">
+    </div>
+  </div>
+
+  <!-- conteúdo principal -->
+  <main class="d-main">
+
+    <!-- aviso de login necessário (quando não logado) -->
+    <div class="aviso-login" id="avisoLoginNecessario" style="display:none">
+      <p>Para fazer um pedido pelo delivery, você precisa ter uma conta. Faça login ou cadastre-se gratuitamente!</p>
+      <a href="login.html">Entrar / Criar conta</a>
+    </div>
+
+    <!-- endereço do cliente -->
+    <div class="secao-frete">
+      <h2>📍 Seu endereço</h2>
+      <div class="grupo-campo">
+        <label>Coloque seu endereço</label>
+        <input type="text" id="campoEnderecoEntrega" class="campo-form" placeholder="Rua, número, bairro, cidade..."
+          autocomplete="street-address">
+      </div>
+      <p class="texto-frete-ajuda">Se o endereço já estiver salvo no seu login, ele será preenchido automaticamente.</p>
+      <button class="btn-calcular-frete" onclick="salvarEnderecoEntrega()">Salvar endereço</button>
+      <div class="resultado-frete" id="resultadoFrete"></div>
+    </div>
+
+    <!-- abas de categorias do cardápio -->
+    <div class="d-tabs" id="abasCardapio">
+      <button class="d-tab active" data-cat="entradas">Entradas</button>
+      <button class="d-tab" data-cat="pratos">Pratos Principais</button>
+      <button class="d-tab" data-cat="sobremesas">Sobremesas</button>
+    </div>
+
+    <!-- grade de produtos -->
+    <div class="d-grid" id="gradeItens"></div>
+  </main>
+
+  <!-- overlay e carrinho lateral -->
+  <div class="cart-overlay" id="fundoCarrinho"></div>
+  <aside class="cart-sidebar" id="painelCarrinho">
+    <div class="cart-header">
+      <h2>🛒 Seu Pedido</h2>
+      <button class="cart-close" id="fecharCarrinho" aria-label="Fechar carrinho">✕</button>
+    </div>
+    <div class="cart-body" id="corpoCarrinho">
+      <div class="cart-empty" id="carrinhoVazio">
+        <span>🍽️</span>
+        <p>Seu carrinho está vazio.</p>
+        <p>Adicione itens do cardápio!</p>
+      </div>
+      <ul class="cart-list" id="listaCarrinho"></ul>
+    </div>
+    <div class="cart-footer" id="rodapeCarrinho" style="display:none">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span id="subtotalCarrinho">R$ 0,00</span>
+      </div>
+      <div class="cart-fee">
+        <span>Taxa de entrega</span>
+        <span id="taxaEntregaTexto">R$ 8,00</span>
+      </div>
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="totalCarrinho">R$ 8,00</span>
+      </div>
+      <button class="btn-checkout" id="btnFinalizar">Finalizar Pedido</button>
+      <button class="btn-clear" id="btnLimpar">Limpar carrinho</button>
+    </div>
+  </aside>
+
+  <!-- modal de checkout (formulário + cupons + pix) -->
+  <div class="modal-fundo" id="modalCheckout" style="display:none">
+    <div class="modal-caixa">
+      <div class="checkout-topo">
+        <h2>🧾 Finalizar Pedido</h2>
+        <button class="btn-voltar-carrinho" onclick="voltarParaCarrinhoCheckout()">← Voltar ao carrinho</button>
+      </div>
+
+      <!-- abas do checkout -->
+      <div class="abas-checkout">
+        <button class="aba-checkout ativa" data-painel="dados" onclick="trocarPainelCheckout('dados')">Dados</button>
+        <button class="aba-checkout" data-painel="cupons" onclick="trocarPainelCheckout('cupons')">Cupons</button>
+        <button class="aba-checkout" data-painel="pagamento"
+          onclick="trocarPainelCheckout('pagamento')">Pagamento</button>
+      </div>
+
+      <!-- painel de dados -->
+      <div class="painel-checkout ativo" id="painelDados">
+        <div class="grupo-campo">
+          <label>Endereços salvos</label>
+          <select id="selectEnderecoSalvo" class="campo-form"
+            onchange="carregarEnderecoSelecionadoCheckout(this.value)"></select>
+        </div>
+        <p class="helper-text">Selecione um endereço salvo ou altere os campos abaixo para esta compra.</p>
+        <div class="grupo-campo">
+          <label>Nome completo</label>
+          <input type="text" id="checkNome" class="campo-form" placeholder="Seu nome">
+        </div>
+        <div class="grupo-campo">
+          <label>E-mail</label>
+          <input type="email" id="checkEmail" class="campo-form" placeholder="seu@email.com">
+        </div>
+        <div class="linha-campos">
+          <div class="grupo-campo">
+            <label>CEP</label>
+            <input type="text" id="checkCep" class="campo-form" placeholder="00000-000" maxlength="9"
+              onkeyup="buscarCep(this.value)">
+          </div>
+          <div class="grupo-campo">
+            <label>Número</label>
+            <input type="text" id="checkNumero" class="campo-form" placeholder="123">
+          </div>
+        </div>
+        <div class="grupo-campo">
+          <label>Rua</label>
+          <input type="text" id="checkRua" class="campo-form" placeholder="Será preenchido pelo CEP" readonly>
+        </div>
+        <div class="linha-campos">
+          <div class="grupo-campo">
+            <label>Bairro</label>
+            <input type="text" id="checkBairro" class="campo-form" readonly>
+          </div>
+          <div class="grupo-campo">
+            <label>Cidade / UF</label>
+            <input type="text" id="checkCidade" class="campo-form" readonly>
+          </div>
+        </div>
+        <div class="grupo-campo">
+          <label>Complemento <span class="label-note">(opcional)</span></label>
+          <input type="text" id="checkComplemento" class="campo-form" placeholder="Apto, bloco, referência...">
+        </div>
+        <button class="btn-checkout btn-checkout-spaced" onclick="trocarPainelCheckout('cupons')">Próximo →</button>
+      </div>
+
+      <!-- painel de cupons -->
+      <div class="painel-checkout" id="painelCupons">
+        <p class="helper-text">Selecione um cupom de desconto para usar neste pedido (opcional):</p>
+        <div id="listaCuponsCheckout">
+          <div class="vazio-lista empty-state">Nenhum cupom disponível. Complete missões no seu perfil!</div>
+        </div>
+        <button class="btn-checkout btn-checkout-spaced" onclick="trocarPainelCheckout('pagamento')">Próximo →</button>
+        <button class="btn-clear" onclick="trocarPainelCheckout('dados')">← Voltar</button>
+      </div>
+
+      <!-- painel de pagamento (pix) -->
+      <div class="painel-checkout" id="painelPagamento">
+        <!-- prazo estimado -->
+        <div class="estimativa-prazo" id="estimativaPrazo">
+          <div class="prazo-tempo" id="textoPrazo">35–50 min</div>
+          <p>⏱️ Estimativa de preparo + entrega</p>
+        </div>
+
+        <!-- resumo dos valores -->
+        <div id="resumoValores" class="resumo-valores-space"></div>
+
+        <!-- área do pix -->
+        <div class="area-pix">
+          <div class="qr-code-img" id="areaqrcode">📱</div>
+          <p class="small-muted">Chave Pix (telefone):</p>
+          <div class="chave-pix" id="chavePix" onclick="copiarChavePix()">11948338287</div>
+          <div class="instrucao-pix">
+            Abra seu banco, escolha Pix e cole a chave acima.<br>
+            <strong>Apenas confirme aqui após o pagamento ser realizado.</strong><br>
+            O pedido só é finalizado após a transferência.
+          </div>
+          <button class="btn-confirmar-pix" onclick="confirmarPagamentoPix()">✅ Já realizei o pagamento</button>
+        </div>
+        <button class="btn-clear" onclick="trocarPainelCheckout('cupons')">← Voltar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal de sucesso -->
+  <div class="modal-backdrop" id="modalSucesso" style="display:none">
+    <div class="success-modal">
+      <div class="success-icon">🎉</div>
+      <h2>Pedido realizado!</h2>
+      <p>Seu pedido foi enviado para a cozinha.</p>
+      <p>Estimativa de entrega: <strong id="prazoSucesso">35–50 minutos</strong>.</p>
+      <p class="modal-order-num" id="numeroPedidoSucesso"></p>
+      <button class="btn-checkout" id="btnNovosPedido">Fazer novo pedido</button>
+    </div>
+  </div>
+
+  <script src="delivery.js"></script>
+</body>
+
+</html>
